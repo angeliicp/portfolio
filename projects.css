@@ -124,6 +124,11 @@ section {
     align-items: center;
 }
 
+.project-img5 {
+    border-radius: 2rem;
+    margin-left: 5rem;
+}
+
 .section-flex-container {
     display: flex;
     gap: 2rem;
