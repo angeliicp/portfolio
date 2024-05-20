@@ -14,9 +14,82 @@
         <h1 class="title">Projects</h1>
     </section>
 
-    <section class="project">
+    <section id="project">
         <div class="project-title2">
             <p>Named Entity Recognition</p>
+        </div>
+
+        <div class="section__text">
+            <p class="section__text__p1">
+                This project utilized the concept of Named Entity Recognition (NER) to extract
+                valuable information from unstructured text data obtained from online newspaper
+                articles. The goal was to transform this unstructured data into structured data and store
+                it in a database, facilitating easier analysis of wildfire incident occurrences in California.
+            </p>
+        </div>
+
+        <div class="details-container">
+            <div class="section-flex-container">
+                <div class="text-container">
+                    <p class="section__text__p2">from online news article</p>
+                    <img src="./assets/NERonlinews.jpg" alt="Online News Article" class="project-img">
+                </div>
+                <div class="text-container">
+                    <p class="section__text__p2">to NER Result</p>
+                    <img src="./assets/NERresult.jpg" alt="NER Result" class="project-img">
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="details-container">
+            <h3>Technologies used</h3>
+            <p>Python</p>
+            <p>BeautifulSoup (web scraping library)</p>
+            <p>spaCy (NLP library)</p>
+            <p>MySQL</p>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="section__text">
+            <h3>Approach</h3>
+        </div>
+        
+        <p class="section__text__p1">
+            Utilized the Beautiful Soup library in Python to parse the HTML content of online news article 
+            and retrieve the relevant text data.
+        </p>
+        <div class="pic-container">
+            <img src="./assets/NERplaintext.png" alt="Parsed News Article Content" class="project-img">
+        </div>
+
+        <br>
+
+        <p class="section__text__p1">
+            Employed the spaCy library to perform NER on the extracted text data. This process helped identify 
+            and extract crucial information such as dates, locations, and names of individuals involved in the wildfire incidents.
+        </p>
+        <div class="pic-container">
+            <img src="./assets/NER.jpg" alt="spaCy result" class="project-img">
+        </div>
+
+        <div class="section-flex-container2">
+            <img src="./assets/NERlabelperson.png" alt="NER label on person" class="project-img6">
+            <img src="./assets/NERlabelorg.jpg" alt="NER label on organization" class="project-img6">
+        </div>
+
+        <p class="section__text__p1">
+            Designed and implemented a structured database using MySQL to store the extracted wildfire incident data, 
+            including defining appropriate constraints and schemas for data integrity.
+        </p>
+
+        <div class="section-flex-container">
+            <img src="./assets/NERsql.png" alt="NER MySQL" class="project-img">
+            <img src="./assets/NERsql2.png" alt="NER MySQL" class="project-img">
         </div>
     </section>
 
@@ -33,7 +106,7 @@
                 <h2 class="experience-sub-title project-title">Website for Yasporbi Middle School</h2>
                 <div class="btn-container">
                     <button class="btn btn-color-2 project-btn" 
-                    onclick="location.href='project2.html'">See More
+                    onclick="location.href='project1.html'">See More
                 </button>
                 </div>
             </div>

@@ -31,6 +31,10 @@ a,
     transition: all 300ms ease;
 }
 
+h3 {
+    margin-bottom: 1rem;
+}
+
 /*SECTIONS*/
 
 section {
@@ -141,11 +145,32 @@ section {
     margin-left: 5rem;
 }
 
+.project-img6 {
+    border-radius: 2rem;
+    width: 30%;
+    height: 30%;
+}
+
+.project-img7 {
+    border-radius: 2rem;
+    margin-left: 5rem;
+    display: block;
+    margin: 0 auto;
+}
+
 .section-flex-container {
     display: flex;
     gap: 2rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
+}
+
+.section-flex-container2 {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    justify-content: center;
 }
 
 .section-flex-container_column {
