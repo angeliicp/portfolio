@@ -281,6 +281,14 @@ section {
     display: flex;
 }
 
+.about-containers-noflex {
+    gap: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    height: 800px;
+    width: 800px;
+}
+
 .details-container {
     padding: 1.5rem;
     flex: 1;
