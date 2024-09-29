@@ -285,8 +285,6 @@ section {
     gap: 2rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    height: 800px;
-    width: 800px;
 }
 
 .details-container {
@@ -296,6 +294,18 @@ section {
     border-radius: 2rem;
     border: rgb(53, 53, 53) 0.1rem solid;
     border-color: rgb(163, 163, 163);
+    text-align: center;
+}
+
+.details-container-noflex {
+    padding: 1rem;
+    flex: 1;
+    background-color: white;
+    border-radius: 1.5rem;
+    border: rgb(53, 53, 53) 0.1rem solid;
+    border-color: rgb(163, 163, 163);
+    max-width: 465px;
+    min-height: 550px;
     text-align: center;
 }
 
@@ -316,7 +326,11 @@ section {
     color: rgb(85, 85, 85);
     font-weight: 600;
     font-size: 1.75rem;
-    margin-bottom: 2rem;
+    height: 4rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
   .experience-details-container {
@@ -332,6 +346,15 @@ section {
     flex-direction: row;
     gap: 2.5rem;
     justify-content: space-around;
+}
+
+.article-sub-title {
+    height: 4rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: center;
 }
 
 /* PROJECT SECTION */

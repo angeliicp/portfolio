@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio Projects</title>
+    <link rel="stylesheet" href="projects.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+</head>
+
+<body>
+    <section id="top-bar">
+        <p class="section__text__p1">See My Recent</p>
+        <h1 class="title">Projects</h1>
+    </section>
+
+    <section id="project">
+        <div class="project-title2">
+            <p>Kaizen Management System</p>
+        </div>
+
+        <div class="section__text">
+            <p class="section__text__p1">
+                This project is a requirement to complete a project-based virtual internship with ID/X Partners and Rakamin Academy.
+                It involved designing and implementing a data warehouse solution to integrate data from multiple sources, including 
+                database backup file (.bak), an Excel file, and a CSV file containing transaction data. 
+            </p>
+        </div>
+
+        <div class="section-flex-container">
+            <div class="section__text">
+                <h3>Goals</h3>
+                <ul>
+                    <li>Integrate data from multiple sources to create a centralized database</li>
+                    <li>Transform and cleanse data from duplication and inconsistencies</li>
+                    <li>Design and implement star schema data model</li>
+                    <li>Improve query performance by creating stored procedure</li>
+                </ul>
+            </div>
+            <br>
+            <div class="section__text2">
+                <h3>Technologies Used</h3>
+                <ul>
+                    <li>Talend Open Studio</li>
+                    <li>SQL Server Management Studio</li>
+                </ul>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="section-flex-container">
+            <div class="details-container">
+                <h3>Source Database Schema</h3>
+                <img src="./assets/dwhbackup.jpg" alt="DWH Source Database" class="project-img">
+            </div>
+            <div class="details-container">
+                <h3>Target Database Schema</h3>
+                <img src="./assets/dwhtarget.jpg" alt="DWH Target Database" class="project-img">
+            </div>
+        </div>
+
+        <br>
+
+        <div class="section__text">
+            <h3>Approach</h3>
+        </div>
+        
+        <p class="section__text__p1">
+            Established connections from Talend to the source and target databases in SQL Server. 
+            This step is also part of configuring the metadata inputs in Talend together with the Excel files and CSV file.
+        </p>
+
+        <div class="section-flex-container">
+            <img src="./assets/dwhconnect.jpg" alt="Connecting to SQL" class="project-img">
+            <img src="./assets/dwhmetadata.jpg" alt="Connecting to SQL" class="project-img">
+        </div>
+
+        <div class="details-container">
+            <p class="section__text__p2">
+                Dimension Table ETL
+            </p>
+            
+            <li>DimBranch: Performed a direct mapping of columns from the source table to the target DimBranch 
+                table using the tMap component , followed by loading the data into the target database
+            </li>
+            <img src="./assets/dwhbranch.png" alt="ETL for DimBranch" class="project-img5">
+            <img src="./assets/dwhbranchmap.jpg" alt="DimBranch Mapping" class="project-img5"> 
+
+            <br>
+            <br>
+
+            <li>DimCustomer: DimCustomer: Preprocessed the customer, city, and state tables by ensuring correct 
+                data types using tConvertType components. Then, joined the state, city, and customer table using 
+                tJoin component and loaded it into the SQL Server. 
+            </li>
+            <img src="./assets/dwhcust.png" alt="ETL for DimCustomer" class="project-img5">
+
+            <br>
+            <br>
+
+            <li>DimAccount: Performed column mapping using tMap component and defined foreign key constraint from 
+                the DimCustomer table using tDBRow component
+            </li>
+            <img src="./assets/dwhaccount.png" alt="ETL for DimAccount" class="project-img5">
+            <img src="./assets/dwhaccdbrow.jpg" alt="Adding foreign key in DimAccount" class="project-img5">
+        </div>
+
+        <br>
+        <br>
+
+        <div class="details-container">
+            <p class="section__text__p2">
+                Fact Table ETL
+            </p>
+
+            <li>Converted the data types in the Excel file and CSV file columns to match with the transaction_db table</li>
+            <li>Consolidated data from the transaction_db table, Excel file, and CSV file into a single table using tUnite component</li>
+            <li>Eliminated duplicate data using the tUniqRow components</li>
+            <li>Defined foreign key constraint from relevant tables, like DimAccount and DimBranch, using the tDBRow Component</li>
+
+            <img src="./assets/dwhtrans.png" alt="ETL for FactTransaction" class="project-img5">
+        </div>
+
+        <br>
+        <br>
+
+        <div class="details-container">
+            <p class="section__text__p2">
+                Stored Procedure SQL
+            </p>
+
+            <p class="section__text__p1">
+                After completing the ETL processes, two stored procedures were created in SQL Server. The first procedure calculated 
+                the total transaction and its amount for each day to support daily transaction analysis. Then, the second procedure 
+                calculated the current account balance for each customer based on their transaction history. 
+            </p>
+
+            <div class="section-flex-container">
+                <img src="./assets/dwhprocedure1.jpg" alt="Stored Procedure1" class="project-img">
+                <img src="./assets/dwhprocedure2.jpg" alt="Stored Procedure2" class="project-img">
+            </div>
+        </div>
+    </section>
+
+    <section id="other-projects">
+        <P class="section__text__p1">Browse My Other</P>
+        <h1 class="title">Projects</h1>
+        <div class="project-cards-container">
+            <div class="details-container color-container">
+                <div class="article-container">
+                    <img src="./assets/yspproject.jpeg" 
+                    alt="project1.png"
+                    class="project-img">
+                </div>
+                <h2 class="experience-sub-title project-title">Website for Yasporbi Middle School</h2>
+                <div class="btn-container">
+                    <button class="btn btn-color-2 project-btn" 
+                    onclick="location.href='project1.html'">See More
+                </button>
+                </div>
+            </div>
+
+            <div class="details-container color-container">
+                <div class="article-container">
+                    <img src="./assets/NER (1).jpg" 
+                    alt="project1.png"
+                    class="project-img">
+                </div>
+                <h2 class="experience-sub-title project-title">Named Entity Recognition</h2>
+                <div class="btn-container">
+                    <button class="btn btn-color-2 project-btn" 
+                    onclick="location.href='project3.html'">See More
+                </button>  
+                </div>
+            </div>
+
+            <div class="details-container color-container">
+                <div class="article-container">
+                    <img src="./assets/WebApp.jpg" 
+                    alt="project1.png"
+                    class="project-img">
+                </div>
+                <h2 class="experience-sub-title project-title">Budget Tracker Web App</h2>
+                <div class="btn-container">
+                    <button class="btn btn-color-2 project-btn" 
+                    onclick="location.href='project4.html'">See More
+                </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu">
+        <p class="section__text__p1">Or Go Back to</p>
+        <br>
+        <div class="btn-container">
+            <button class="btn btn-color-1" 
+            onclick="location.href='index.html'"> 
+                <h1>Main Page</h1>
+        </button>  
+        </div>
+    </section>
+</body>
+</html>
