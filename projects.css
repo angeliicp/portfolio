@@ -60,6 +60,7 @@ section {
 
 .section__text2 {
     text-align: center;
+    margin: 0 auto;
 }
 
 .section__text p {
@@ -156,6 +157,12 @@ section {
     margin-left: 5rem;
     display: block;
     margin: 0 auto;
+}
+
+.project-img8 {
+    border-radius: 2rem;
+    width: 48%;
+    height: 48%;
 }
 
 .section-flex-container {

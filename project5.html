@@ -21,126 +21,96 @@
 
         <div class="section__text">
             <p class="section__text__p1">
-                This project is a requirement to complete a project-based virtual internship with ID/X Partners and Rakamin Academy.
-                It involved designing and implementing a data warehouse solution to integrate data from multiple sources, including 
-                database backup file (.bak), an Excel file, and a CSV file containing transaction data. 
+                During my internship at PT Mesin Isuzu Indonesia, I was assigned to the HR department with 
+                the task of developing a Kaizen Management System. This web-based application was designed 
+                to digitalize the company's suggestion system program.
             </p>
         </div>
 
         <div class="section-flex-container">
             <div class="section__text">
-                <h3>Goals</h3>
+                <h3>Responsibilities</h3>
                 <ul>
-                    <li>Integrate data from multiple sources to create a centralized database</li>
-                    <li>Transform and cleanse data from duplication and inconsistencies</li>
-                    <li>Design and implement star schema data model</li>
-                    <li>Improve query performance by creating stored procedure</li>
+                    <li>Served as full-stack developer, implementing the MVC architecture</li>
+                    <li>Implemented libraries such as DOMPDF, PHPMailer, and PHPOffice<br>to enhance system functionality</li>
+                    <li>Collaborated with HR department to gather<br>requirements and conduct system reviews</li>
+                    <li>Created user documentation to facilitate system adoption</li>
                 </ul>
             </div>
             <br>
             <div class="section__text2">
                 <h3>Technologies Used</h3>
                 <ul>
-                    <li>Talend Open Studio</li>
-                    <li>SQL Server Management Studio</li>
+                    <li>Code Igniter 3</li>
+                    <li>MySQL and phpMyAdmin</li>
+                    <li>Composer</li>
+                    <li>Laragon</li>
+                    <li>Visual Studio Code</li>
                 </ul>
             </div>
         </div>
 
         <br>
 
-        <div class="section-flex-container">
-            <div class="details-container">
-                <h3>Source Database Schema</h3>
-                <img src="./assets/dwhbackup.jpg" alt="DWH Source Database" class="project-img">
-            </div>
-            <div class="details-container">
-                <h3>Target Database Schema</h3>
-                <img src="./assets/dwhtarget.jpg" alt="DWH Target Database" class="project-img">
-            </div>
-        </div>
 
+        <div class="section__text"></div>
+            <p class="section__text__p1">
+                Kaizen Management System is a digital platform where employees can submit their 
+                ideas for improving various aspects of the company's activities and facilities.
+                Once submitted, these suggestions undergo  an evaluation process that involves multiple levels of management. 
+            </p>
+        </div>
         <br>
 
-        <div class="section__text">
-            <h3>Approach</h3>
+        <div class="details-container">
+            <h3>Dashboard Page</h3>
+            <img src="./assets/kmsdashboard.png" alt="KMS Dashboard" class="project-img1">
+
+        </div>
+        <br>
+
+        <div class="details-container">
+            <h3>Add SS Form Page</h3>
+            <img src="./assets/kmsadd.png" alt="KMS Add Form" class="project-img1">
+        </div>
+        <br>
+
+        <div class="details-container">
+            <h3>SS Form List Page</h3>
+            <img src="./assets/kmsformlist.png" alt="KMS Form List" class="project-img1">
         </div>
         
-        <p class="section__text__p1">
-            Established connections from Talend to the source and target databases in SQL Server. 
-            This step is also part of configuring the metadata inputs in Talend together with the Excel files and CSV file.
-        </p>
-
         <div class="section-flex-container">
-            <img src="./assets/dwhconnect.jpg" alt="Connecting to SQL" class="project-img">
-            <img src="./assets/dwhmetadata.jpg" alt="Connecting to SQL" class="project-img">
-        </div>
-
-        <div class="details-container">
-            <p class="section__text__p2">
-                Dimension Table ETL
-            </p>
-            
-            <li>DimBranch: Performed a direct mapping of columns from the source table to the target DimBranch 
-                table using the tMap component , followed by loading the data into the target database
-            </li>
-            <img src="./assets/dwhbranch.png" alt="ETL for DimBranch" class="project-img5">
-            <img src="./assets/dwhbranchmap.jpg" alt="DimBranch Mapping" class="project-img5"> 
-
-            <br>
-            <br>
-
-            <li>DimCustomer: DimCustomer: Preprocessed the customer, city, and state tables by ensuring correct 
-                data types using tConvertType components. Then, joined the state, city, and customer table using 
-                tJoin component and loaded it into the SQL Server. 
-            </li>
-            <img src="./assets/dwhcust.png" alt="ETL for DimCustomer" class="project-img5">
-
-            <br>
-            <br>
-
-            <li>DimAccount: Performed column mapping using tMap component and defined foreign key constraint from 
-                the DimCustomer table using tDBRow component
-            </li>
-            <img src="./assets/dwhaccount.png" alt="ETL for DimAccount" class="project-img5">
-            <img src="./assets/dwhaccdbrow.jpg" alt="Adding foreign key in DimAccount" class="project-img5">
-        </div>
-
-        <br>
-        <br>
-
-        <div class="details-container">
-            <p class="section__text__p2">
-                Fact Table ETL
-            </p>
-
-            <li>Converted the data types in the Excel file and CSV file columns to match with the transaction_db table</li>
-            <li>Consolidated data from the transaction_db table, Excel file, and CSV file into a single table using tUnite component</li>
-            <li>Eliminated duplicate data using the tUniqRow components</li>
-            <li>Defined foreign key constraint from relevant tables, like DimAccount and DimBranch, using the tDBRow Component</li>
-
-            <img src="./assets/dwhtrans.png" alt="ETL for FactTransaction" class="project-img5">
-        </div>
-
-        <br>
-        <br>
-
-        <div class="details-container">
-            <p class="section__text__p2">
-                Stored Procedure SQL
-            </p>
-
-            <p class="section__text__p1">
-                After completing the ETL processes, two stored procedures were created in SQL Server. The first procedure calculated 
-                the total transaction and its amount for each day to support daily transaction analysis. Then, the second procedure 
-                calculated the current account balance for each customer based on their transaction history. 
-            </p>
-
-            <div class="section-flex-container">
-                <img src="./assets/dwhprocedure1.jpg" alt="Stored Procedure1" class="project-img">
-                <img src="./assets/dwhprocedure2.jpg" alt="Stored Procedure2" class="project-img">
+            <div class="details-container">
+                <h3>Assessment Box</h3>
+                <img src="./assets/kmsassmt.png" alt="KMS Assessment Box" class="project-img">
+            </div>
+            <div class="details-container">
+                <h3>Approval Box</h3>
+                <img src="./assets/kmsapp.png" alt="KMS Approval Box" class="project-img">
             </div>
         </div>
+
+        <div class="details-container">
+            <h3>SS Form History</h3>
+            <div class="section-flex-container">
+                <img src="./assets/kmshist.png" alt="SS History" class="project-img8">
+                <img src="./assets/kmshist2.png" alt="SS History2" class="project-img8">
+            </div>
+        </div>
+        <br>
+
+        <div class="details-container">
+            <h3>Best SS Page</h3>
+            <img src="./assets/kmsbest.png" alt="KMS Form List" class="project-img">
+        </div>
+        <br>
+        
+        <div class="details-container">
+            <h3>User Guideline</h3>
+            <img src="./assets/kmsguide.png" alt="KMS Form List" class="project-img">
+        </div>
+        <br>
     </section>
 
     <section id="other-projects">
